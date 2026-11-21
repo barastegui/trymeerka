@@ -793,6 +793,29 @@ body {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ── Mobile glass cards ──────────────────────────────────── */
+@media (max-width: 700px) {
+  .what {
+    background: linear-gradient(160deg, #1E1A4D 0%, #14122B 100%);
+  }
+  .what .section-eyebrow { color: rgba(123,224,176,0.9); }
+  .what .what-title { color: #fff; }
+  .what .what-body  { color: rgba(201,198,242,0.8); }
+  .feature {
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 1px 0 rgba(255,255,255,0.08);
+  }
+  .feature:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0,0,0,0.28), inset 0 1px 0 rgba(255,255,255,0.12);
+  }
+  .feature-title { color: #fff; }
+  .feature-body  { color: rgba(201,198,242,0.75); }
+}
 </style>
 </head>
 <body>
