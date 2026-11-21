@@ -60,7 +60,7 @@
       heroNote: "Próximamente · iOS · Gratis",
       whatEyebrow: "Qué es Meerka",
       whatTitle: "La guía de viaje que nadie te da en la agencia",
-      whatBody: "Cada destino tiene sus trampas. Taxistas que inventan tarifas, pulseras que "regalan" y luego cobran, cambios de moneda trucados. Meerka reúne los timos más reportados por viajeros reales y te explica cómo esquivarlos antes de que te pase.",
+      whatBody: "Cada destino tiene sus trampas. Taxistas que inventan tarifas, pulseras que 'regalan' y luego cobran, cambios de moneda trucados. Meerka reúne los timos más reportados por viajeros reales y te explica cómo esquivarlos antes de que te pase.",
       f1Title: "Buscá por destino",
       f1Body: "Filtrá timos por ciudad o país antes de llegar. Llegá preparado, no sorprendido.",
       f2Title: "Di esto",
@@ -759,6 +759,39 @@ body {
   transform-box: fill-box;
   transform-origin: center center;
   animation: eyeBlink 4s ease-in-out infinite;
+}
+
+/* ── Emil design polish ──────────────────────────────────── */
+.btn-appstore {
+  transition: transform 160ms cubic-bezier(0.23,1,0.32,1);
+}
+.btn-appstore:active {
+  transform: scale(0.96);
+}
+.feature {
+  transition: transform 180ms cubic-bezier(0.23,1,0.32,1), box-shadow 180ms cubic-bezier(0.23,1,0.32,1);
+}
+.feature:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(30,26,77,0.14);
+}
+.nav {
+  transition: background 240ms cubic-bezier(0.23,1,0.32,1), backdrop-filter 240ms cubic-bezier(0.23,1,0.32,1), box-shadow 240ms cubic-bezier(0.23,1,0.32,1);
+}
+.nav.scrolled {
+  background: rgba(30,26,77,0.85) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 1px 0 rgba(255,255,255,0.08);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 600ms cubic-bezier(0.23,1,0.32,1), transform 600ms cubic-bezier(0.23,1,0.32,1);
+}
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 </style>
 </head>
