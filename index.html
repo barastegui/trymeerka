@@ -811,7 +811,7 @@ body {
 </section>
 
 <!-- QUÉ ES MEERKA -->
-<section class="what">
+<section class="what reveal">
   <div class="what-inner">
     <p class="section-eyebrow what-eyebrow">What is Meerka</p>
     <h2 class="what-title">The travel guide nobody gives you at the agency</h2>
@@ -859,7 +859,7 @@ body {
 </section>
 
 <!-- CÓMO FUNCIONA -->
-<section class="how">
+<section class="how reveal">
   <div class="how-inner">
     <p class="section-eyebrow how-eyebrow">How it works</p>
     <h2 class="how-title">Three steps to travel scam-free</h2>
@@ -951,5 +951,31 @@ body {
   <button class="lang-btn" onclick="toggleLang()" aria-label="Switch to Spanish" style="margin-left:0;">ES</button>
 </footer>
 
+
+<script>
+  // Nav glass blur on scroll
+  const nav = document.querySelector('.nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+  }
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('visible'));
+  }
+</script>
 </body>
 </html>
