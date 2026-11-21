@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; overflow: hidden; }
+  body {
+    background: #1E1A4D;
+    font-family: 'Sora', system-ui, sans-serif;
+    display: flex;
+    align-items: center;
+    padding: 0 80px;
+    position: relative;
+  }
+  /* Background texture */
+  body::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 85% 50%, rgba(255,176,32,0.12) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 60% at 15% 20%, rgba(123,224,176,0.08) 0%, transparent 60%);
+  }
+  .content {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(123,224,176,0.15);
+    border: 1px solid rgba(123,224,176,0.3);
+    border-radius: 100px;
+    padding: 6px 16px;
+    color: #7BE0B0;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  .eyebrow-dot {
+    width: 7px; height: 7px;
+    background: #7BE0B0;
+    border-radius: 50%;
+  }
+  h1 {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 64px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.05;
+    letter-spacing: -2px;
+    margin-bottom: 24px;
+  }
+  h1 em {
+    font-style: normal;
+    color: #FFB020;
+  }
+  p {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 20px;
+    color: rgba(201,198,242,0.8);
+    line-height: 1.5;
+    max-width: 540px;
+  }
+  .logo-wrap {
+    position: relative;
+    z-index: 1;
+    flex-shrink: 0;
+    margin-left: 60px;
+  }
+  .logo-bg {
+    width: 180px; height: 180px;
+    background: rgba(255,176,32,0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .domain {
+    position: absolute;
+    bottom: 44px;
+    right: 80px;
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgba(201,198,242,0.4);
+    letter-spacing: 0.05em;
+    z-index: 1;
+  }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@700&family=Inter:wght@400&display=swap">
+</head>
+<body>
+  <div class="content">
+    <div class="eyebrow"><span class="eyebrow-dot"></span>Your travel companion</div>
+    <h1>Travel smarter.<br>Don't fall for <em>the trap</em>.</h1>
+    <p>Meerka alerts you to the most common scams at every destination — before they happen to you.</p>
+  </div>
+  <div class="logo-wrap">
+    <div class="logo-bg">
+      <svg width="90" height="90" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg">
+        <rect width="1024" height="1024" rx="230" fill="#FFB020"/>
+        <rect x="420" y="210" width="184" height="604" rx="92" fill="#1E1A4D"/>
+        <circle cx="512" cy="306" r="50" fill="#7BE0B0"/>
+      </svg>
+    </div>
+  </div>
+  <span class="domain">trymeerka.com</span>
+</body>
+</html>

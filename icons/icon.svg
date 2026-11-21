@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Fondo índigo a sangre completa (iOS redondea las esquinas) -->
+  <rect x="0" y="0" width="1024" height="1024" fill="#1E1A4D"/>
+  <!-- Centinela: píldora vertical ámbar, centrada -->
+  <rect x="420" y="210" width="184" height="604" rx="92" fill="#FFB020"/>
+  <!-- Ojo: círculo menta en la parte alta, centrado en la píldora -->
+  <circle cx="512" cy="306" r="50" fill="#7BE0B0"/>
+</svg>

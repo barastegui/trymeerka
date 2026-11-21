@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <!-- Solo el símbolo, fondo transparente, reducido al 90 % para quedar dentro de la zona segura de Android -->
+  <rect x="429" y="240" width="166" height="544" rx="83" fill="#FFB020"/>
+  <circle cx="512" cy="326" r="45" fill="#7BE0B0"/>
+</svg>
