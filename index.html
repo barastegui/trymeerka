@@ -51,6 +51,18 @@
       footerCopy: "© 2026 Meerka · trymeerka.com",
       langBtn: "ES",
       langLabel: "Cambiar a español",
+      contactEyebrow: "Contact",
+      contactTitle: "Get in touch",
+      contactSub: "Report a scam, suggest a destination, or just say hi.",
+      contactName: "Name",
+      contactEmail: "Email",
+      contactMessage: "Message",
+      contactSend: "Send message",
+      contactOpt1: "Report a scam / incident",
+      contactOpt2: "Suggest a destination",
+      contactOpt3: "General feedback",
+      contactOpt4: "Other",
+      contactSuccess: "Message sent. We'll get back to you soon!",
     },
     es: {
       eyebrow: "Tu compañero de viaje",
@@ -88,6 +100,18 @@
       postCardsStat: "35 destinos. Cientos de timos mapeados.",
       langBtn: "EN",
       langLabel: "Switch to English",
+      contactEyebrow: "Contacto",
+      contactTitle: "Escríbenos",
+      contactSub: "Reporta una estafa, sugiere un destino o simplemente saluda.",
+      contactName: "Nombre",
+      contactEmail: "Correo electrónico",
+      contactMessage: "Mensaje",
+      contactSend: "Enviar mensaje",
+      contactOpt1: "Reportar una estafa",
+      contactOpt2: "Sugerir un destino",
+      contactOpt3: "Feedback general",
+      contactOpt4: "Otro",
+      contactSuccess: "Mensaje enviado. Te responderemos pronto.",
     }
   };
 
@@ -137,6 +161,20 @@
     set('.cta-title', 'ctaTitle');
     set('.cta-sub', 'ctaSub');
     set('.footer-copy', 'footerCopy');
+    set('.contact-eyebrow', 'contactEyebrow');
+    set('.contact-title', 'contactTitle');
+    set('.contact-sub', 'contactSub');
+    set('.contact-submit', 'contactSend');
+    set('.contact-success', 'contactSuccess');
+    ['contactOpt1','contactOpt2','contactOpt3','contactOpt4'].forEach((k,i) => {
+      const opt = document.querySelector(`#contactForm select option:nth-child(${i+1})`);
+      if (opt) opt.textContent = t[k];
+    });
+    const ph = { '[name="name"]': 'contactName', '[name="email"]': 'contactEmail', '[name="message"]': 'contactMessage' };
+    Object.entries(ph).forEach(([sel, key]) => {
+      const el = document.querySelector(`#contactForm ${sel}`);
+      if (el) el.placeholder = t[key];
+    });
     document.querySelectorAll('.lang-btn').forEach(btn => {
       btn.textContent = t.langBtn;
       btn.setAttribute('aria-label', t.langLabel);
@@ -544,6 +582,83 @@ body {
   font-size: 14px;
   color: var(--on-ind-m);
 }
+
+/* ── CONTACT FORM ── */
+.contact {
+  padding-block: 80px;
+  padding-left:  max(24px, env(safe-area-inset-left, 0px));
+  padding-right: max(24px, env(safe-area-inset-right, 0px));
+  background: var(--bg);
+}
+.contact-inner { max-width: 560px; margin: 0 auto; }
+.contact-title {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: var(--ink);
+  margin-bottom: .5rem;
+  text-wrap: balance;
+}
+.contact-sub {
+  color: var(--ink);
+  opacity: .65;
+  margin-bottom: 2rem;
+  font-size: .97rem;
+  line-height: 1.6;
+}
+.contact-form { display: flex; flex-direction: column; gap: 14px; }
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(30,26,77,.18);
+  background: var(--surface);
+  color: var(--ink);
+  font-family: 'Inter', sans-serif;
+  font-size: .95rem;
+  outline: none;
+  transition: border-color 160ms;
+  box-sizing: border-box;
+}
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus { border-color: var(--amber); }
+.contact-form textarea { resize: vertical; min-height: 110px; }
+.contact-form select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+.contact-submit {
+  align-self: flex-start;
+  background: var(--amber);
+  color: #1E1A4D;
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: .95rem;
+  border: none;
+  border-radius: 999px;
+  padding: 12px 28px;
+  cursor: pointer;
+  transition: transform 160ms cubic-bezier(0.23,1,0.32,1);
+}
+.contact-submit:active { transform: scale(0.96); }
+.contact-success {
+  display: none;
+  background: rgba(123,224,176,.15);
+  border: 1px solid rgba(123,224,176,.4);
+  border-radius: 10px;
+  padding: 14px 18px;
+  color: var(--ink);
+  font-size: .95rem;
+  margin-top: 8px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .contact-form input,
+  :root:not([data-theme="light"]) .contact-form select,
+  :root:not([data-theme="light"]) .contact-form textarea { border-color: rgba(255,255,255,.12); }
+}
+:root[data-theme="dark"] .contact-form input,
+:root[data-theme="dark"] .contact-form select,
+:root[data-theme="dark"] .contact-form textarea { border-color: rgba(255,255,255,.12); }
 
 /* ── FOOTER CTA ── */
 .footer-cta {
@@ -996,6 +1111,28 @@ body {
   </div>
 </section>
 
+<!-- CONTACT -->
+<section class="contact reveal" id="contact">
+  <div class="contact-inner">
+    <p class="section-eyebrow contact-eyebrow" data-i18n="contactEyebrow">Contact</p>
+    <h2 class="contact-title" data-i18n="contactTitle">Get in touch</h2>
+    <p class="contact-sub" data-i18n="contactSub">Report a scam, suggest a destination, or just say hi.</p>
+    <form class="contact-form" id="contactForm" action="https://formspree.io/f/xaeolwol" method="POST">
+      <input type="text" name="name" placeholder="Name" data-i18n-placeholder="contactName" required>
+      <input type="email" name="email" placeholder="Email" data-i18n-placeholder="contactEmail" required>
+      <select name="subject" data-i18n-select="contactSubjectOptions">
+        <option value="incident" data-i18n="contactOpt1">Report a scam / incident</option>
+        <option value="city" data-i18n="contactOpt2">Suggest a destination</option>
+        <option value="feedback" data-i18n="contactOpt3">General feedback</option>
+        <option value="other" data-i18n="contactOpt4">Other</option>
+      </select>
+      <textarea name="message" placeholder="Message" data-i18n-placeholder="contactMessage" required></textarea>
+      <button type="submit" class="contact-submit" data-i18n="contactSend">Send</button>
+    </form>
+    <div class="contact-success" id="contactSuccess" data-i18n="contactSuccess">Message sent. We'll get back to you soon!</div>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer class="footer">
   <a class="footer-logo" href="#">
@@ -1045,6 +1182,33 @@ body {
     revealEls.forEach(el => observer.observe(el));
   } else {
     revealEls.forEach(el => el.classList.add('visible'));
+  }
+
+  // Contact form — Formspree AJAX submit
+  const contactForm = document.getElementById('contactForm');
+  const contactSuccess = document.getElementById('contactSuccess');
+  if (contactForm) {
+    contactForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const btn = contactForm.querySelector('.contact-submit');
+      btn.disabled = true;
+      try {
+        const res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          contactForm.reset();
+          contactForm.style.display = 'none';
+          contactSuccess.style.display = 'block';
+        } else {
+          btn.disabled = false;
+        }
+      } catch(_) {
+        btn.disabled = false;
+      }
+    });
   }
 </script>
 </body>
