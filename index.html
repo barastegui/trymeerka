@@ -358,10 +358,11 @@ body {
 }
 
 /* ── APP STORE BUTTON ── */
-.store-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; align-items: start; width: fit-content; }
-.store-btns .btn-appstore { width: 100%; box-sizing: border-box; }
-.store-note-ios { margin: 0; grid-column: 1; }
-.store-btn-soon { grid-column: 2; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mint); opacity: 0.85; display: flex; align-items: center; justify-content: center; }
+.store-btns { display: flex; gap: 12px; }
+.store-btns .btn-appstore { flex: 1 1 0; min-width: 0; justify-content: flex-start; }
+.store-labels { display: flex; gap: 12px; margin-top: 2px; }
+.store-labels .hero-note { flex: 1 1 0; margin: 0; }
+.store-btn-soon { flex: 1 1 0; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mint); opacity: 0.85; display: flex; align-items: center; justify-content: center; }
 .btn-gplay-label {
   font-family: var(--f-h);
   font-size: 17px;
@@ -987,29 +988,30 @@ body {
     <p class="hero-body">Meerka alerts you to the most common scams at every destination, tells you exactly what to say to avoid them, and helps you share what you learned with other travelers.</p>
     <div class="hero-cta-row">
       <div class="store-btns">
-      <a class="btn-appstore" href="https://apps.apple.com/app/meerka/id6838067825" target="_blank" rel="noopener" aria-label="Descargar Meerka en el App Store">
-        <div class="btn-appstore-icon" aria-hidden="true">
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--ink)" xmlns="http://www.w3.org/2000/svg">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-        </div>
-        <div class="btn-appstore-text">
-          <span class="btn-appstore-sup">Download on the</span>
-          <span class="btn-appstore-label">App Store</span>
-        </div>
-      </a>
-      <a class="btn-appstore btn-googleplay" href="https://play.google.com/store/apps" target="_blank" rel="noopener" aria-label="Get Meerka on Google Play">
-        <div class="btn-appstore-icon" aria-hidden="true">
-          <svg width="22" height="22" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="var(--ink)" d="M 4 4.0117188 L 4 43.988281 L 26.712891 24 L 4 4.0117188 z"/><path fill="var(--ink)" d="M 29.888672 20.814453 L 7.3808594 7.6054688 L 32.613281 22.146484 L 29.888672 20.814453 z"/><path fill="var(--ink)" d="M 7.3808594 40.394531 L 29.888672 27.185547 L 32.613281 25.853516 L 7.3808594 40.394531 z"/><path fill="var(--ink)" d="M 34.199219 23.207031 L 29.888672 20.814453 L 32.613281 22.146484 L 40.615234 24 L 32.613281 25.853516 L 29.888672 27.185547 L 34.199219 24.792969 L 34.199219 23.207031 z"/></svg>
-        </div>
-        <div class="btn-appstore-text">
-          <span class="btn-appstore-sup btn-gplay-sup">Get it on</span>
-          <span class="btn-gplay-label">Google Play</span>
-        </div>
-      </a>
-      <p class="hero-note store-note-ios"><span class="hero-note-text">Available now · iOS · Free</span></p>
-      <span class="store-btn-soon btn-gplay-soon">Coming soon</span>
-    </div></p>
+        <a class="btn-appstore" href="https://apps.apple.com/app/meerka/id6838067825" target="_blank" rel="noopener" aria-label="Descargar Meerka en el App Store">
+          <div class="btn-appstore-icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--ink)" xmlns="http://www.w3.org/2000/svg"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+          </div>
+          <div class="btn-appstore-text">
+            <span class="btn-appstore-sup">Download on the</span>
+            <span class="btn-appstore-label">App Store</span>
+          </div>
+        </a>
+        <a class="btn-appstore btn-googleplay" href="https://play.google.com/store/apps" target="_blank" rel="noopener" aria-label="Get Meerka on Google Play">
+          <div class="btn-appstore-icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="var(--ink)" d="M 4 4.0117188 L 4 43.988281 L 26.712891 24 L 4 4.0117188 z"/><path fill="var(--ink)" d="M 29.888672 20.814453 L 7.3808594 7.6054688 L 32.613281 22.146484 L 29.888672 20.814453 z"/><path fill="var(--ink)" d="M 7.3808594 40.394531 L 29.888672 27.185547 L 32.613281 25.853516 L 7.3808594 40.394531 z"/><path fill="var(--ink)" d="M 34.199219 23.207031 L 29.888672 20.814453 L 32.613281 22.146484 L 40.615234 24 L 32.613281 25.853516 L 29.888672 27.185547 L 34.199219 24.792969 L 34.199219 23.207031 z"/></svg>
+          </div>
+          <div class="btn-appstore-text">
+            <span class="btn-appstore-sup btn-gplay-sup">Get it on</span>
+            <span class="btn-gplay-label">Google Play</span>
+          </div>
+        </a>
+      </div>
+      <div class="store-labels">
+        <p class="hero-note"><span class="hero-note-text">Available now &middot; iOS &middot; Free</span></p>
+        <span class="store-btn-soon btn-gplay-soon">Coming soon</span>
+      </div>
+    </div>
   </div><!-- /hero-content -->
   <div class="hero-visual">
     <svg class="hero-logo" viewBox="395 185 234 654" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
