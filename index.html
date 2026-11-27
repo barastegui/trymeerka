@@ -358,10 +358,10 @@ body {
 }
 
 /* ── APP STORE BUTTON ── */
-.store-btns { display: inline-grid; grid-template-columns: 1fr 1fr; gap: 12px 12px; align-items: start; }
-.store-btns .btn-appstore { width: 100%; box-sizing: border-box; justify-content: flex-start; }
-.store-btn-spacer { display: none; }
-.store-btn-soon { grid-column: 2; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mint); opacity: 0.85; text-align: center; margin-top: -4px; }
+.store-btns { display: grid; grid-template-columns: 1fr 1fr; gap: 10px 12px; align-items: start; width: fit-content; }
+.store-btns .btn-appstore { width: 100%; box-sizing: border-box; }
+.store-note-ios { margin: 0; grid-column: 1; }
+.store-btn-soon { grid-column: 2; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mint); opacity: 0.85; display: flex; align-items: center; justify-content: center; }
 .btn-gplay-label {
   font-family: var(--f-h);
   font-size: 17px;
@@ -1007,10 +1007,9 @@ body {
           <span class="btn-gplay-label">Google Play</span>
         </div>
       </a>
+      <p class="hero-note store-note-ios"><span class="hero-note-text">Available now · iOS · Free</span></p>
       <span class="store-btn-soon btn-gplay-soon">Coming soon</span>
-    </div>
-    </div>
-    <p class="hero-note"><span class="hero-note-text">Coming soon · iOS · Free</span></p>
+    </div></p>
   </div><!-- /hero-content -->
   <div class="hero-visual">
     <svg class="hero-logo" viewBox="395 185 234 654" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
