@@ -21,7 +21,8 @@
       heroBody: "Meerka alerts you to the most common scams at every destination, tells you exactly what to say to avoid them, and helps you share what you learned with other travelers.",
       heroCta: "Download on the",
       heroStore: "App Store",
-      heroNote: "Coming soon · iOS · Free",
+      heroNote: "Available now · iOS · Free",
+      gplaySup: "Coming soon on",
       whatEyebrow: "What is Meerka",
       whatTitle: "The travel guide nobody gives you at the agency",
       whatBody: "Every destination has its traps. Taxi drivers who invent fares, bracelets that are 'gifted' and then charged for, rigged currency exchanges. Meerka gathers the most reported scams from real travelers and explains how to dodge them before they happen to you.",
@@ -71,7 +72,8 @@
       heroBody: "Meerka te avisa de los timos más comunes en cada destino, te dice qué decir para esquivarlos y te ayuda a compartir lo que aprendiste con otros viajeros.",
       heroCta: "Descargar en la",
       heroStore: "App Store",
-      heroNote: "Próximamente · iOS · Gratis",
+      heroNote: "Ya disponible · iOS · Gratis",
+      gplaySup: "Próximamente en",
       whatEyebrow: "Qué es Meerka",
       whatTitle: "La guía de viaje que nadie te da en una agencia",
       whatBody: "Cada destino tiene sus trampas. Taxistas que inflan tarifas, pulseras que te 'regalan' y luego te cobran, cambios de moneda fraudulentos. Meerka reúne los timos más reportados por viajeros reales y te explica cómo esquivarlos antes de que te pasen.",
@@ -137,6 +139,7 @@
     set('.btn-appstore-sup', 'heroCta');
     set('.btn-appstore-label', 'heroStore');
     set('.hero-note-text', 'heroNote');
+    set('.btn-gplay-sup', 'gplaySup');
     set('.what-eyebrow', 'whatEyebrow');
     set('.what-title', 'whatTitle');
     set('.what-body', 'whatBody');
@@ -352,6 +355,9 @@ body {
 }
 
 /* ── APP STORE BUTTON ── */
+.store-btns { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+.btn-googleplay { opacity: 0.5; cursor: not-allowed; pointer-events: none; }
+.btn-googleplay .btn-appstore-sup { font-size: 9px; }
 .btn-appstore {
   display: inline-flex;
   align-items: center;
@@ -969,6 +975,7 @@ body {
     <h1 class="hero-title">Travel smarter.<br>Don't fall for <em>the trap</em>.</h1>
     <p class="hero-body">Meerka alerts you to the most common scams at every destination, tells you exactly what to say to avoid them, and helps you share what you learned with other travelers.</p>
     <div class="hero-cta-row">
+      <div class="store-btns">
       <a class="btn-appstore" href="https://apps.apple.com/app/meerka/id6838067825" target="_blank" rel="noopener" aria-label="Descargar Meerka en el App Store">
         <div class="btn-appstore-icon" aria-hidden="true">
           <svg width="28" height="28" viewBox="0 0 24 24" fill="var(--ink)" xmlns="http://www.w3.org/2000/svg">
