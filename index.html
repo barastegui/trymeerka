@@ -358,11 +358,10 @@ body {
 }
 
 /* ── APP STORE BUTTON ── */
-.store-btns { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-start; }
-.store-btns .btn-appstore { flex: 1; min-width: 160px; }
-.store-btn-wrap { display: flex; flex-direction: column; gap: 6px; align-items: center; flex: 1; min-width: 160px; }
-.store-btn-wrap .btn-appstore { width: 100%; }
-.store-btn-soon { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mint); opacity: 0.85; }
+.store-btns { display: inline-grid; grid-template-columns: 1fr 1fr; gap: 12px 12px; align-items: start; }
+.store-btns .btn-appstore { width: 100%; box-sizing: border-box; justify-content: flex-start; }
+.store-btn-spacer { display: none; }
+.store-btn-soon { grid-column: 2; font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--mint); opacity: 0.85; text-align: center; margin-top: -4px; }
 .btn-gplay-label {
   font-family: var(--f-h);
   font-size: 17px;
@@ -999,7 +998,6 @@ body {
           <span class="btn-appstore-label">App Store</span>
         </div>
       </a>
-      <div class="store-btn-wrap">
       <a class="btn-appstore btn-googleplay" href="https://play.google.com/store/apps" target="_blank" rel="noopener" aria-label="Get Meerka on Google Play">
         <div class="btn-appstore-icon" aria-hidden="true">
           <svg width="22" height="22" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path fill="var(--ink)" d="M 4 4.0117188 L 4 43.988281 L 26.712891 24 L 4 4.0117188 z"/><path fill="var(--ink)" d="M 29.888672 20.814453 L 7.3808594 7.6054688 L 32.613281 22.146484 L 29.888672 20.814453 z"/><path fill="var(--ink)" d="M 7.3808594 40.394531 L 29.888672 27.185547 L 32.613281 25.853516 L 7.3808594 40.394531 z"/><path fill="var(--ink)" d="M 34.199219 23.207031 L 29.888672 20.814453 L 32.613281 22.146484 L 40.615234 24 L 32.613281 25.853516 L 29.888672 27.185547 L 34.199219 24.792969 L 34.199219 23.207031 z"/></svg>
@@ -1010,7 +1008,6 @@ body {
         </div>
       </a>
       <span class="store-btn-soon btn-gplay-soon">Coming soon</span>
-      </div>
     </div>
     </div>
     <p class="hero-note"><span class="hero-note-text">Coming soon · iOS · Free</span></p>
