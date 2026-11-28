@@ -433,8 +433,12 @@ body {
   padding-right: max(24px, env(safe-area-inset-right, 0px));
 }
 .what-inner {
-  max-width: 760px;
+  max-width: 1000px;
   margin: 0 auto;
+}
+.what-text {
+  max-width: 760px;
+  margin: 0 auto 48px;
 }
 .section-eyebrow {
   font-size: 11px;
@@ -462,18 +466,22 @@ body {
   font-size: 16px;
   color: var(--muted);
   max-width: 540px;
-  margin: 0 0 48px;
+  margin: 0;
 }
 
 /* ── FEATURES ── */
 .features {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 16px;
+  display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
+  gap: 16px;
+}
+.feature {
+  flex: 0 0 175px;
 }
 @media (max-width: 700px) {
-  .features { grid-template-columns: 1fr; }
+  .features { flex-direction: column; align-items: stretch; }
+  .feature { flex: none; }
 }
 .feature {
   background: var(--surface);
@@ -1030,9 +1038,11 @@ body {
 <!-- QUÉ ES MEERKA -->
 <section class="what reveal">
   <div class="what-inner">
-    <p class="section-eyebrow what-eyebrow">What is Meerka</p>
-    <h2 class="what-title">The travel guide nobody gives you at the agency</h2>
-    <p class="what-body">Every destination has its traps. Taxi drivers who invent fares, bracelets that are 'gifted' and then charged for, rigged currency exchanges. Meerka gathers the most reported scams from real travelers and explains how to dodge them before they happen to you.</p>
+    <div class="what-text">
+      <p class="section-eyebrow what-eyebrow">What is Meerka</p>
+      <h2 class="what-title">The travel guide nobody gives you at the agency</h2>
+      <p class="what-body">Every destination has its traps. Taxi drivers who invent fares, bracelets that are 'gifted' and then charged for, rigged currency exchanges. Meerka gathers the most reported scams from real travelers and explains how to dodge them before they happen to you.</p>
+    </div>
 
     <div class="features">
       <div class="feature">
